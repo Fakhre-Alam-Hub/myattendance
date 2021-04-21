@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@x6@m7djt2gy=nu3yu=crld^$oft94p7*3^kp5-@h09ce%-kc8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost','myattendance2021.herokuapp.com']
 
