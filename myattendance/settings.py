@@ -15,7 +15,7 @@ SECRET_KEY = '@x6@m7djt2gy=nu3yu=crld^$oft94p7*3^kp5-@h09ce%-kc8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','']
+ALLOWED_HOSTS = ['localhost','myattendance2021.herokuapp.com']
 
 
 # Application definition
