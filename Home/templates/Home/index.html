@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+    {% if user.is_authenticated %}
+    <h2>You are Logged in</h2>
+    <div class="border border-info mt-5" style="padding: 10px;">
+        <h4>Steps to be followed</h4>
+        <ol type="1">
+            <li>Upload your image in profile section, ignore if done</li>
+            <li>Click on Extract Features button</li>
+            <li>Click on Go to Attendance Pannel, allow the browser to open webcam</li>
+        </ol>
+    </div>
+    <div>
+        <button class="btn btn-outline-success mt-3" onclick="goToProfile()">Upload Profile Image</button>
+        <button class="btn btn-outline-success mt-3" onclick="goToExtractFeatures()">Extract Features</button>
+        <button class="btn btn-outline-success mt-3" onclick="goToAttendance()">Go to Attendance Panel</button>
+    </div>
+
+
+{% else %}
+<h2>Welcome Back Aliens</h2>
+<h4>Stay connected intersting functionalities are under developmental stage.</h4>
+<div class="border border-info mt-5" style="padding: 10px;">
+    <h4>Steps to be followed</h4>
+    <ol type="1">
+        <li>Register yourself, ignore if done</li>
+        <li>Login with your username and password</li>
+        <li>Upload your image in profile section</li>
+        <li>Click on Extract button</li>
+        <li>Open the webcam and allow the browser to open webcam.</li>
+    </ol>
+</div>
+<div>
+    <button class="btn btn-outline-success mt-3" onclick="goToRegister()">Register</button>
+    <button class="btn btn-outline-success mt-3" onclick="goToLogin()">Login</button>
+    <button class="btn btn-outline-success mt-3" onclick="goToAttendance()">Go to Attendance Panel</button>
+</div>
+</div>
+{% endif %}
+
+<script>
+    function goToProfile() {
+        location.replace("{% url 'account_profile' %}")
+    }
+
+    function goToRegister() {
+        location.replace("{% url 'account_register' %}")
+    }
+
+    function goToLogin() {
+        location.replace("{% url 'account_login' %}")
+    }
+
+    function goToAttendance() {
+        location.replace("{% url 'home_attendance' %}")
+    }
+
+    function openCamera() {
+        location.replace("{% url 'home_video_feed' %}")
+    }
+
+    function goToExtractFeatures() {
+        location.replace("{% url 'home_extract_features' %}")
+    }
+
+</script>
+
+{% endblock body %}
